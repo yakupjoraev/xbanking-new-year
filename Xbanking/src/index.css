@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply font to all elements */
+body {
+  font-family: 'Satoshi', sans-serif;
+}
+
+.filter-social:hover img {
+  filter: invert(38%) sepia(93%) saturate(1277%) hue-rotate(184deg) brightness(103%) contrast(101%);
+}
+
+.main-bg {
+
+  &::before {
+    content: '';
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+    background-image: image-set(
+    url('/img/bg/bg.webp') 1x type('image/webp'),
+    url('/img/bg/bg.png') 1x,
+    url('/img/bg/bg@2x.webp') 2x type('image/webp'),
+    url('/img/bg/bg@2x.png') 2x
+  );
+  background-image: -webkit-image-set(
+    url('/img/bg/bg.webp') 1x type('image/webp'),
+    url('/img/bg/bg.png') 1x,
+    url('/img/bg/bg@2x.webp') 2x type('image/webp'),
+    url('/img/bg/bg@2x.png') 2x
+  );
+
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  }
+
+}
+
+.bg-lines {
+  background-image: url('/img/tokens/bg-lines.svg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.bg-radial-gradient {border: 1px solid #d5e6f6;
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  background: radial-gradient(90.83% 90.83% at 49.87% 9.17%, #fff 0%, #f5fcff 20.62%, #f0f9ff 30%, #f1f3f4 62.5%, #fff 100%);
+}
+
+.coins-animation {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+}
+
+.coins-animation img {
+  position: absolute;
+  animation: float 20s infinite;
+  will-change: transform;
+}
+
+.coins-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+}
+
+.coins-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.1) 100%);
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+@media (min-width: 2000px) {
+  .main-bg {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 1400px) {
+  .main-bg {
+    background-position: top;
+    background-size: contain;
+  }
+}
+
+.tab::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #8b8b8b;
+  z-index: 1;
+}
+.tab.active::before {
+  height: 2px;
+  background-color: #0c0c0c;
+}
+
+/* Calculator Styles */
+.calculator-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 50;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.calculator-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calculator-dropdown-item:hover {
+  background-color: #F9FAFB;
+}
+
+.calculator-dropdown-item img {
+  width: 24px;
+  height: 24px;
+}
