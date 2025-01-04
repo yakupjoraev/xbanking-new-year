@@ -73,11 +73,12 @@ export default function Security() {
         <div className="mb-8 lgTab:mb-6">
           <h2 className="text-[42px] xl:text-4xl lg:text-3xl leading-none lgTab:text-2xl font-bold">
             <span className="text-[#008cfe] relative px-1">
-              <span className="relative z-10">Security</span>
+              <span className="relative z-10 inline-block mb-2">Security</span>
               <span className="absolute inset-0 bg-[rgb(0,140,254,0.2)] -z-0"></span>
-            </span> and{' '}
+            </span>{' '}
+            and{' '}
             <span className="text-[#fc60a8] relative px-1">
-              <span className="relative z-10">Stability</span>
+              <span className="relative z-10 inline-block mb-2">Stability</span>
               <span className="absolute inset-0 bg-[rgb(252,96,168,0.2)] -z-0"></span>
             </span>
           </h2>

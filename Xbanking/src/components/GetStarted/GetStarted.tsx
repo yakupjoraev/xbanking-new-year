@@ -62,7 +62,11 @@ const GetStarted: FC = () => {
           </h2>
 
           {/* Steps */}
-          <div className="relative flex items-center justify-between w-full  mb-12 mt-4 bg-radial-gradient py-14 px-20 2xl:flex-col 2xl:gap-4  2xl:items-start lg:p-5  lg:mb-6 lg:mt-6">
+          <div
+            className="relative flex items-center justify-between w-full  
+          mb-12 mt-4 bg-radial-gradient py-14 px-20 lg:flex-col lg:gap-4  
+          lg:items-start lg:p-5  lg:mb-6 lg:mt-6"
+          >
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col relative pr-20 2xl:pr-0">
                 <div className="">

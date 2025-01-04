@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router';
 import Logo from '/img/logo.svg';
 import Birthday from '/img/birthday.png';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,9 +22,11 @@ export default function Header() {
     document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
   };
 
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <header
-      className={`fixed lg:relative top-0 left-0 right-0 z-50 transition-all duration-300 py-4 md:px-5 xl:py-6 lg:py-4 ${
+      className={`sticky lg:sticky top-0 left-0 right-0 z-50 transition-all duration-300 py-4 md:px-5 xl:py-6 lg:py-4 ${
         isScrolled ? 'shadow-sm bg-white lg:shadow-none' : ''
       }`}
     >
@@ -38,54 +42,54 @@ export default function Header() {
           <div className="flex items-center justify-center flex-grow lg:hidden gap-12 xl:gap-6">
             <ul className="flex gap-12 items-center xl:gap-6">
               <li>
-                <a
-                  className="text-black font-semibold text-base 
-                                transition-all duration-300 border-b border-b-transparent 
-                                hover:border-b-yellow hover:text-yellow"
-                  href="#"
+                <Link
+                  className={`text-black font-semibold px-1 text-base transition-all duration-300 border-b border-b-transparent hover:border-b-yellow hover:text-yellow ${
+                    isActive('/') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                  }`}
+                  to="/app"
                 >
                   Earn
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="text-black font-semibold text-base 
-                                transition-all duration-300 border-b border-b-transparent 
-                                hover:border-b-yellow hover:text-yellow"
-                  href="#"
+                <Link
+                  className={`text-black font-semibold px-1 text-base transition-all duration-300 border-b border-b-transparent hover:border-b-yellow hover:text-yellow ${
+                    isActive('/trade') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                  }`}
+                  to="/trade"
                 >
                   Trade
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="text-black font-semibold text-base 
-                                transition-all duration-300 border-b border-b-transparent 
-                                hover:border-b-yellow hover:text-yellow"
-                  href="#"
+                <Link
+                  className={`text-black font-semibold px-1 text-base transition-all duration-300 border-b border-b-transparent hover:border-b-yellow hover:text-yellow ${
+                    isActive('/institutional') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                  }`}
+                  to="/institutional"
                 >
                   Institutional
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="text-black font-semibold text-base 
-                                transition-all duration-300 border-b border-b-transparent 
-                                hover:border-b-yellow hover:text-yellow"
-                  href="#"
+                <Link
+                  className={`text-black font-semibold px-1 text-base transition-all duration-300 border-b border-b-transparent hover:border-b-yellow hover:text-yellow ${
+                    isActive('/affiliate') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                  }`}
+                  to="/affiliate"
                 >
                   Affiliate Program
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="text-black font-semibold text-base 
-                                transition-all duration-300 border-b border-b-transparent 
-                                hover:border-b-yellow hover:text-yellow"
-                  href="#"
+                <Link
+                  className={`text-black font-semibold px-1 text-base transition-all duration-300 border-b border-b-transparent hover:border-b-yellow hover:text-yellow ${
+                    isActive('/token') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                  }`}
+                  to="/token"
                 >
                   Token
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -121,49 +125,59 @@ export default function Header() {
             <div className="flex flex-col h-full pt-24 px-6">
               <ul className="flex flex-col gap-6">
                 <li>
-                  <a
-                    href="#"
-                    className="text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors"
+                  <Link
+                    to="/app"
+                    className={`text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors ${
+                      isActive('/') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                    }`}
                     onClick={toggleMenu}
                   >
                     Earn
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors"
+                  <Link
+                    to="/trade"
+                    className={`text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors ${
+                      isActive('/trade') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                    }`}
                     onClick={toggleMenu}
                   >
                     Trade
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors"
+                  <Link
+                    to="/institutional"
+                    className={`text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors ${
+                      isActive('/institutional') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                    }`}
                     onClick={toggleMenu}
                   >
                     Institutional
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors"
+                  <Link
+                    to="/affiliate"
+                    className={`text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors ${
+                      isActive('/affiliate') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                    }`}
                     onClick={toggleMenu}
                   >
                     Affiliate Program
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors"
+                  <Link
+                    to="/token"
+                    className={`text-xl text-[#1f2226] hover:text-[#2752e7] transition-colors ${
+                      isActive('/token') ? '!text-[#2752e7] bg-[#2752e7]/10' : ''
+                    }`}
                     onClick={toggleMenu}
                   >
                     Token
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -180,8 +194,8 @@ export default function Header() {
               <li className="flex items-center gap-4">
                 <a
                   href=""
-                  className="min-w-32 w-fit py-3 px-6 bg-gradient-to-r from-[#05cdfe] to-[#6b47fb] rounded 
-                            text-white font-semibold text-base border-2
+                  className="min-w-32 w-fit py-3 px-6 bg-gradient-to-r from-[#05cdfe] to-[#6b47fb] rounded-lg 
+                            text-white font-semibold text-base 
                             transition-all duration-300 hover:text-yellow hover:border-yellow hover:bg-transparent
                             xl:py-2 xl:px-4 lg:py-2 lg:px-3 lg:min-w-24"
                 >

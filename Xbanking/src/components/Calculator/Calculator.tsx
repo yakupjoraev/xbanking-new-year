@@ -64,7 +64,7 @@ const Calculator: FC = () => {
   };
 
   return (
-    <section className="container mx-auto px-4 py-20 lg:py-16">
+    <section className="container mx-auto px-4 py-20 lg:py-16 md:pt-4 md:pb-8">
       <h2 className="text-[42px] xl:text-4xl lg:text-3xl font-bold mb-12">
         Calculate your <span className="text-[#028090] bg-[#02809033] px-2">potential profit</span>
       </h2>
@@ -74,7 +74,8 @@ const Calculator: FC = () => {
           <div className="flex-1 lg:w-full">
             <div className="relative" ref={dropdownRef}>
               <button
-                className="w-full h-14 flex items-center justify-between bg-white rounded-lg px-4 hover:border-[#6b47fb] transition-colors"
+                className="w-full h-14 flex items-center justify-between
+                 bg-white rounded-lg px-4 hover:border-[#6b47fb] transition-colors"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 {selectedAsset ? (
@@ -169,7 +170,8 @@ const Calculator: FC = () => {
 
           <button
             onClick={handleCalculate}
-            className="h-14 bg-gradient-to-r from-[#05cdfe] to-[#6b47fb] text-white px-8 rounded-lg font-semibold hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="h-14 bg-gradient-to-r from-[#05cdfe] to-[#6b47fb] text-white
+             px-8 rounded-lg font-semibold hover:opacity-90 transition-opacity whitespace-nowrap hover:text-yellow"
           >
             Start Earn
           </button>

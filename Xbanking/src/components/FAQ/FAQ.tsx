@@ -52,7 +52,7 @@ export default function FAQ() {
         <div className="mb-12  lgTab:mb-8">
           <h3 className="text-[42px] xl:text-4xl lg:text-3xl leading-none lgTab:text-2xl font-bold">
             Frequently Asked{' '}
-            <span className="text-[#ffba0c] relative px-1 leading-none">
+            <span className="text-[#ffba0c] relative px-1 leading-none inline-block mb-2">
               <span className="relative z-10 leading-none">Questions</span>
               <span className="absolute inset-0 bg-[rgb(255,186,12,0.2)] -z-0"></span>
             </span>

@@ -51,7 +51,7 @@ export default function Services() {
 
               <button
                 className="min-w-44 w-fit py-3 px-6 bg-gradient-to-r from-[#05cdfe] to-[#6b47fb] rounded-lg 
-                            text-white font-semibold text-base border-2
+                            text-white font-semibold text-base 
                             transition-all duration-300 hover:text-yellow hover:border-yellow hover:bg-transparent
                             xl:py-2 xl:px-4 lg:py-2 lg:px-3 lg:min-w-24"
               >
@@ -109,7 +109,7 @@ export default function Services() {
 
               <button
                 className="min-w-44 w-fit py-3 px-6 bg-gradient-to-r from-[#05cdfe] to-[#6b47fb] rounded-lg 
-                            text-white font-semibold text-base border-2
+                            text-white font-semibold text-base 
                             transition-all duration-300 hover:text-yellow hover:border-yellow hover:bg-transparent
                             xl:py-2 xl:px-4 lg:py-2 lg:px-3 lg:min-w-24"
               >

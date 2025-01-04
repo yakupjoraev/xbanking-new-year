@@ -34,9 +34,9 @@ const TopPools: FC = () => {
     <section className="py-20 lg:py-12">
       <div className="container">
         <div className="px-4">
-          <h2 className="text-[42px] xl:text-4xl lg:text-3xl font-bold">
+          <h2 className="text-[42px] xl:text-4xl lg:text-3xl font-bold leading-none">
             Top 5{' '}
-            <span className="text-[#2fbf71] bg-[rgba(47,191,113,0.2)] px-2 rounded">
+            <span className="text-[#2fbf71] bg-[rgba(47,191,113,0.2)] px-2 rounded inline-block mb-2">
               most profitable
             </span>{' '}
             pools
@@ -74,7 +74,7 @@ const TopPools: FC = () => {
                   <div className="font-bold text-base text-[#0c0c0c] md:text-sm">{token.apr}</div>
                   <button
                     className="min-w-20 w-fit py-2.5 px-2 rounded-lg bg-gradient-to-r ml-auto from-[#05cdfe] to-[#6b47fb] 
-                            text-white font-semibold border-2 text-xs
+                            text-white font-semibold  text-xs
                             transition-all duration-300 hover:text-yellow hover:border-yellow hover:bg-transparent
                             xl:py-2 xl:px-4 lg:py-2 lg:px-3 lg:min-w-24"
                   >
@@ -126,7 +126,7 @@ const TopPools: FC = () => {
         <div className="flex justify-center mt-12">
           <button
             className="min-w-44 w-fit py-3 px-6 bg-gradient-to-r from-[#05cdfe] to-[#6b47fb] rounded-lg 
-                            text-white font-semibold text-base border-2
+                            text-white font-semibold text-base 
                             transition-all duration-300 hover:text-yellow hover:border-yellow hover:bg-transparent
                             xl:py-2 xl:px-4 lg:py-2 lg:px-3 lg:min-w-24"
           >

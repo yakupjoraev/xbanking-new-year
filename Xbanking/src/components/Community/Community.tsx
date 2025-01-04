@@ -18,7 +18,11 @@ interface CommunityLink {
   link: string;
 }
 
-export default function Community() {
+interface CommunityProps {
+  className?: string;
+}
+
+export default function Community({ className }: CommunityProps) {
   const communityLinks: CommunityLink[] = [
     {
       icon: TelegramIcon,
@@ -72,12 +76,12 @@ export default function Community() {
   ];
 
   return (
-    <div className="flex flex-col gap-12 container mx-auto px-4 py-16" id="community">
+    <div className="flex flex-col gap-12 container mx-auto px-4 py-16 md:py-8" id="community">
       <div className="">
         <h2 className="text-[42px] xl:text-4xl lg:text-3xl lgTab:text-2xl font-bold mb-12 lgTab:mb-8">
           Join Our{' '}
           <span className="text-[#7765e3] relative px-1">
-            <span className="relative z-10">Community</span>
+            <span className="relative z-10 inline-block mb-2">Community</span>
             <span className="absolute inset-0  bg-[rgba(119,101,227,0.2)] -z-0"></span>
           </span>
         </h2>
@@ -97,7 +101,7 @@ export default function Community() {
         </div>
       </div>
 
-      <div className="container mx-auto px-11 py-8 bg-white rounded-lg">
+      <div className={`container mx-auto px-11 py-8 bg-white rounded-lg ${className}`}>
         <ul className="grid grid-cols-4 lg:grid-cols-2 md:grid-cols-1 gap-4 align-center">
           <li className="flex items-center justify-center">
             <img src={MarketIcon1} alt="icon" />

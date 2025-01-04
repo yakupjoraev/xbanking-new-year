@@ -9,6 +9,7 @@ import TopPools from './components/TopPools/TopPools';
 import GetStarted from './components/GetStarted/GetStarted';
 import Hero from './components/Hero/Hero';
 import Calculator from './components/Calculator/Calculator';
+import FadeInOnScroll from './components/FadeInOnScroll/FadeInOnScroll';
 import './index.css';
 
 function App() {
@@ -17,15 +18,35 @@ function App() {
       <Header />
 
       <div className="flex-grow mt-[120px] lgTab:mt-0 max-w-7xl mx-auto">
-        <Hero />
-        <GetStarted />
-        <TopPools />
-        <Calculator />
-        <HowItWorks />
-        <Services />
-        <Security />
-        <FAQ />
-        <Community />
+        <div className="main-bg">
+          <FadeInOnScroll>
+            <Hero />
+          </FadeInOnScroll>
+        </div>
+        <FadeInOnScroll delay={200}>
+          <GetStarted />
+        </FadeInOnScroll>
+        <FadeInOnScroll delay={400}>
+          <TopPools />
+        </FadeInOnScroll>
+        <FadeInOnScroll delay={600}>
+          <Calculator />
+        </FadeInOnScroll>
+        <FadeInOnScroll delay={800}>
+          <HowItWorks />
+        </FadeInOnScroll>
+        <FadeInOnScroll delay={800}>
+          <Services />
+        </FadeInOnScroll>
+        <FadeInOnScroll delay={800}>
+          <Security />
+        </FadeInOnScroll>
+        <FadeInOnScroll delay={800}>
+          <FAQ />
+        </FadeInOnScroll>
+        <FadeInOnScroll delay={800}>
+          <Community />
+        </FadeInOnScroll>
       </div>
 
       <Footer />
